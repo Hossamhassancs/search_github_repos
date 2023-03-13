@@ -1,24 +1,17 @@
 # README
+HINT: i know this task dosn't require Rails but i added the framework
+requirements:
+- docker
+- docker compose already installed on your machine
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+after clone the repo:
+- cd ..../the_project_directory/
+- docker-compose up --build
+- docker-compose exec web bash
+- rails db:create
+- hit : http://localhost:3000/ 
+- search any repos you want :)
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+to Run the specs
+- docker-compose exec web bash
+- bundle exec rspec
