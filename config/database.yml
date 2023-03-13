@@ -24,12 +24,12 @@ default: &default
 
 development:
   <<: *default
-  database: myapp_development
+  database: adjust_development
 
 
 test:
   <<: *default
-  database: myapp_test
+  database: adjust_test
 
 
 # As with config/secrets.yml, you never want to store sensitive information,

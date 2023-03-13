@@ -1,0 +1,46 @@
+<h1>Adjust Search Repos on Github </h1>
+
+<%= form_tag(root_path, method: :get) do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+
+
+<h1>Repos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>REPO NAME </th>
+      <th>REPO FULL NAME</th>
+      <th>URL</th>
+      <th>Description</th>
+      <th>GIT URL</th>
+      <th>Language</th>
+     
+    </tr>
+  </thead>
+
+  <tbody>
+   <% unless @repos.nil?%>
+    <% @repos.each do |repo| %>
+      <tr>
+        <td><%= repo.name %></td>
+        <td><%= repo.full_name %></td>
+        <% repo_url= repo.html_url %>
+        <td> <%= link_to repo_url, "#{repo_url}"%> </td>
+        <td><%= repo.description %></td>
+        <td><%= repo.git_url %></td>
+        <td><%= repo.language %></td>
+    
+      </tr>
+    <% end %>
+   <%end%>
+  </tbody>
+</table>
+
+<br>
+
